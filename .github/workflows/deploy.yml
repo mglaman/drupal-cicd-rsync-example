@@ -23,7 +23,7 @@ jobs:
         run: echo "${{ secrets.PRIVATE_KEY }}" >> $HOME/deploy.key
         env:
           SSH_PRIVATE_KEY: ${{secrets.PLATFORMSH_PRIVATE_KEY}}
-      - run: chmod 444 $HOME/deploy.key
+      - run: chmod 400 $HOME/deploy.key
       - run: mkdir -p $HOME/.ssh && touch $HOME/.ssh/known_hosts
       - name: Keyscan
         run: ssh-keyscan 142.93.193.17 >> $HOME/.ssh/known_hosts
