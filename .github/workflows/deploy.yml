@@ -19,4 +19,4 @@ jobs:
           coverage: none
           tools: composer:v2
       - run: composer install
-      - run: rsync -e 'ssh -o UserKnownHostsFile=/dev/null,StrictHostKeyChecking=no' -rzcEl . root@167.71.255.26:/var/www/html --exclude-from=".rsyncignore" --checksum --delete
+      - run: rsync -e 'ssh -o UserKnownHostsFile=/dev/null,StrictHostKeyChecking=no' -rzcEl . root@142.93.193.17:/var/www/html --exclude-from=".rsyncignore" --checksum --delete
