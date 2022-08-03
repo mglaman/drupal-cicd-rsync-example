@@ -1,0 +1,22 @@
+name: Deploy Ahoy
+on:
+  release:
+    types:
+      - released
+  push:
+    branches: [ main ]
+concurrency: deployment
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: hivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: pdo_mysql
+          coverage: none
+          tools: composer:v2
+      - run: composer install
+      - run: rsync -rzcEl . root@142.93.193.17:/var/www/html --exclude-from=".rsyncignore" --checksum --delete
