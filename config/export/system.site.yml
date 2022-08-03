@@ -2,7 +2,7 @@ _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
 uuid: 38c4ac04-1762-4396-a177-44dff5cdb97f
-name: 'Drupal CI/CD Example'
+name: 'Drush Site-Install'
 mail: admin@example.com
 slogan: ''
 page:

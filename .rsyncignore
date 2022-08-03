@@ -1,3 +1,5 @@
 .git
 web/sites/default/files
 .env
+web/sites/default/settings.local.php
+private
