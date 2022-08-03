@@ -27,5 +27,5 @@ jobs:
       - run: mkdir -p $HOME/.ssh && touch $HOME/.ssh/known_hosts
       - name: Keyscan
         run: ssh-keyscan 142.93.193.17 >> $HOME/.ssh/known_hosts
-      - run: rsync -e "ssh -i $HOME/deploy.key" -rzcEl . root@142.93.193.17:/var/www/html --exclude-from=".rsyncignore" --checksum --delete
-      - run: ssh root@142.93.193.17 'php /var/www/html/vendor/bin/drush deploy --yes'
+      - run: rsync -e "ssh -i $HOME/deploy.key" -rzcElv . root@142.93.193.17:/var/www/html --exclude-from=".rsyncignore" --checksum --delete
+      - run: ssh -i $HOME/deploy.key root@142.93.193.17 'php /var/www/html/vendor/bin/drush deploy --yes'
