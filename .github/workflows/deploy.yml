@@ -20,5 +20,5 @@ jobs:
           tools: composer:v2
       - run: composer install
       - run: mkdir -p ~/.ssh && touch ~/.ssh/known_hosts
-      - run: ssh-keyscan -H 142.93.193.17 > ~/.ssh/known_hosts
+      - run: ssh-keygen -R 142.93.193.17
       - run: rsync -rzcEl . root@167.71.255.26:/var/www/html --exclude-from=".rsyncignore" --checksum --delete
