@@ -19,7 +19,11 @@
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-project-message": "^10.0",
         "drupal/core-recommended": "^10.0",
+        "drush/drush": "^11.1",
         "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "files": ["bootstrap.php"]
     },
     "conflict": {
         "drupal/drupal": "*"
